@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#4e99ba</color>
+    <color name="colorPrimaryDark">#032e3f</color>
+    <color name="colorPrimaryDarkMobile">#021319</color>
+    <color name="colorAccent">#4e99ba</color>
+    <color name="button_background_color">#2c8ed9</color>
+    <color name="screen_header_size_color">#2e3641</color>
+    <color name="edittext_hint_text_color">#b4b4b4</color>
+    <color name="edittextcolor">#0bc6d9</color>
+    <color name="button_color">#00cfe1</color>
+    <color name="action_bar_for_list_color">#2b6c8c</color>
+</resources>

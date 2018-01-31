@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#054c6a"
+   >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <android.support.v7.widget.Toolbar
+
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimaryDark"
+                app:layout_scrollFlags="scroll|enterAlways"
+                android:theme="@style/ToolbarStyle" >
+
+
+                <TextView
+                    android:id="@+id/toolbar_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Reception Login"
+                    android:layout_marginEnd="@dimen/security_code_screen_margin_start_end"
+                    android:textColor="@android:color/white"
+                    style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+                    android:gravity="center_horizontal" />
+
+
+            </android.support.v7.widget.Toolbar>
+
+         <ImageView
+                android:id="@+id/img_patient"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/app_logo"
+                android:layout_marginTop="@dimen/home_screen_margin_start_end"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+         <!--   <TextView
+                android:id="@+id/tv_apsic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/home_screen_margin_top_bottom"
+                android:layout_marginStart="@dimen/home_screen_margin_top_bottom"
+                android:gravity="center"
+                android:text="GURU TEG BAHADUR HOSPITAL"
+                android:textColor="@color/screen_header_size_color"
+                android:textSize="@dimen/home_screen_button_size"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/img_patient" />
+
+-->
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/login_screen_top_margin_mobile_number_text"
+                android:paddingStart="@dimen/security_code_screen_margin_start_end"
+                android:text="Enter Mobile Number"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/home_screen_button_size" />
+
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_view_mobile_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/home_screen_margin_top_bottom"
+                android:layout_marginEnd="@dimen/security_code_screen_margin_start_end"
+                android:layout_marginStart="@dimen/security_code_screen_margin_start_end"
+                android:layout_marginTop="@dimen/home_screen_padding"
+                app:cardCornerRadius="@dimen/cardCornerRadius"
+                app:cardElevation="@dimen/cardElevation"
+                app:cardPreventCornerOverlap="false"
+                app:contentPadding="0dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/card_view">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+                    <ImageView
+                        android:layout_width="0sp"
+                        android:layout_weight="0.1"
+                        android:layout_gravity="center"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="@dimen/home_screen_padding"
+                        android:src="@mipmap/mobile_icon"/>
+
+
+                    <ImageView
+                        android:layout_width="0sp"
+                        android:layout_weight="0.1"
+                        android:layout_gravity="center"
+                        android:layout_height="30sp"
+                        android:src="@mipmap/vertical_line_security"/>
+
+                    <EditText
+                        android:id="@+id/ed_name_mobile_code"
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:layout_weight="0.2"
+                        android:background="@android:color/white"
+                        android:hint="+91"
+                        android:padding="@dimen/home_screen_padding"
+                        android:textColor="@color/edittextcolor"
+                        android:textColorHint="@color/edittextcolor"
+                        android:textSize="@dimen/home_screen_button_size" />
+
+                    <EditText
+                        android:id="@+id/ed_name_mobile_reg_no"
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:layout_weight="1.6"
+                        android:background="@android:color/white"
+                        android:hint=""
+                        android:textColor="@color/edittextcolor"
+                        android:textColorHint="@color/edittextcolor"
+                        android:maxLength="10"
+                        android:paddingTop="@dimen/home_screen_padding"
+                        android:paddingBottom="@dimen/home_screen_padding"
+                        android:inputType="number"
+                        android:textSize="@dimen/home_screen_button_size" />
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_view_continue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/home_screen_margin_top_bottom"
+                android:layout_marginEnd="@dimen/button_screen_margin_start_end"
+                android:layout_marginStart="@dimen/button_screen_margin_start_end"
+                android:layout_marginTop="@dimen/home_screen_padding"
+                app:cardCornerRadius="@dimen/cardCornerRadius"
+                app:cardElevation="@dimen/cardElevation"
+                app:cardPreventCornerOverlap="false"
+                app:contentPadding="0dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/card_view_mobile_number">
+
+
+                <TextView
+                    android:id="@+id/tv_continue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/button_color"
+                    android:gravity="center"
+                    android:padding="@dimen/home_screen_padding"
+                    android:text="SUBMIT"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/home_screen_button_size" />
+
+
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
+</android.support.constraint.ConstraintLayout>

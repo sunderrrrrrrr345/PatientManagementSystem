@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PMSMainActivity">
+    <android.support.design.widget.CoordinatorLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+
+
+        <!--    <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:id="@+id/tv_toolbar"
+                android:gravity="center"
+                android:textColor="@android:color/white"
+                android:text="Society VMS"
+                />-->
+     <!-- <android.support.v7.widget.Toolbar
+                   android:id="@+id/toolbar"
+                   android:layout_width="match_parent"
+                   android:layout_height="?attr/actionBarSize"
+                   android:background="?attr/colorPrimary"
+                   app:layout_scrollFlags="scroll|enterAlways"
+                   app:popupTheme="@style/ThemeOverlay.AppCompat.Light" >
+
+         </android.support.v7.widget.Toolbar>-->
+           <!-- <android.support.design.widget.TabLayout
+                android:id="@+id/tabs"
+                app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:tabMode="scrollable"
+                app:tabGravity="center"/>-->
+        </android.support.design.widget.AppBarLayout>
+
+
+
+        <sunder.admin.patientmanagementsystem.CustomViewPager.CustomViewPager
+            android:id="@+id/viewpager"
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        >
+        </sunder.admin.patientmanagementsystem.CustomViewPager.CustomViewPager>
+
+
+
+
+
+       <!-- <android.support.v4.view.ViewPager
+            android:id="@+id/viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"  />-->
+    </android.support.design.widget.CoordinatorLayout>
+</android.support.constraint.ConstraintLayout>

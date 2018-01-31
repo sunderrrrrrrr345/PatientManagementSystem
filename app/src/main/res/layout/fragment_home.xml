@@ -1,0 +1,84 @@
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/launch_bg"
+    android:layout_above="?actionBarSize">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toTopOf="?actionBarSize">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="?actionBarSize">
+
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimaryDark"
+                android:theme="@style/ToolbarStyle"
+                app:layout_scrollFlags="scroll|enterAlways">
+
+
+                <TextView
+                    android:id="@+id/toolbar_title"
+                    style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:layout_marginEnd="@dimen/security_code_screen_margin_start_end"
+                    android:text="Patient Management System"
+                    android:textColor="@android:color/white" />
+            </android.support.v7.widget.Toolbar>
+
+
+            <ImageView
+                android:id="@+id/img_patient"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/home_screen_margin_start_end"
+                android:src="@mipmap/app_logo" />
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="@dimen/home_screen_padding"
+                       >
+
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:id="@+id/img_reception"
+                            android:layout_marginStart="@dimen/home1_screen_margin_start_end"
+                            android:layout_marginTop="@dimen/security_code_screen_margin_start_end"
+                            android:src="@mipmap/reception_login" />
+
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:id="@+id/img_doctor"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:layout_marginEnd="@dimen/home1_screen_margin_start_end"
+                            android:layout_marginTop="@dimen/home_screen_margin_start_end"
+                            android:src="@mipmap/doctor_login" />
+
+                        </LinearLayout>
+
+
+
+        </LinearLayout>
+    </ScrollView>
+</android.support.constraint.ConstraintLayout>

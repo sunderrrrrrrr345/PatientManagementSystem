@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="event_title_text_size">18sp</dimen>
+    <dimen name="screen_header_size">15sp</dimen>
+    <dimen name="home_screen_button_size">25sp</dimen>
+    <dimen name="home_screen_margin_start_end">25sp</dimen>
+    <dimen name="home_screen_margin_top_bottom">30sp</dimen>
+    <dimen name="security_code_screen_margin_start_end">85sp</dimen>
+    <dimen name="security_code_screen_margin_top_bottom">80sp</dimen>
+    <dimen name="home_screen_padding">15sp</dimen>
+    <dimen name="cardElevation">5sp</dimen>
+    <dimen name="cardCornerRadius">7sp</dimen>
+    <dimen name="login_screen_top_margin_mobile_number_text">50sp</dimen>
+    <dimen name="home1_screen_margin_start_end">125sp</dimen>
+    <dimen name="home1_screen_margin_top_bottom">100sp</dimen>
+    <dimen name="button_screen_margin_start_end">225sp</dimen>
+    <dimen name="button_screen_margin_top_bottom">200sp</dimen>
+    <dimen name="patient_details_screen_margin_start_end">80sp</dimen>
+    <dimen name="patient_details_screen_margin_top_bottom">80sp</dimen>
+</resources>

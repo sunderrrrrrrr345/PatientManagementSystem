@@ -1,0 +1,680 @@
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_above="?actionBarSize"
+    android:background="#054c6a">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toTopOf="?actionBarSize">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="?actionBarSize">
+
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimaryDark"
+                android:theme="@style/ToolbarStyle"
+                app:layout_scrollFlags="scroll|enterAlways">
+
+
+                <TextView
+                    android:id="@+id/toolbar_title"
+                    style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/security_code_screen_margin_start_end"
+                    android:gravity="center_horizontal"
+                    android:text="Patient Details"
+                    android:textColor="@android:color/white" />
+            </android.support.v7.widget.Toolbar>
+
+
+         <!--   <android.support.v7.widget.CardView
+                android:id="@+id/card_view_patient_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/home1_screen_margin_start_end"
+                android:layout_marginStart="@dimen/home1_screen_margin_start_end"
+                android:layout_marginTop="@dimen/home_screen_padding"
+                app:cardCornerRadius="@dimen/cardCornerRadius"
+                android:background="@drawable/bottom_border"
+                app:cardElevation="@dimen/cardElevation"
+                app:cardPreventCornerOverlap="false"
+                app:contentPadding="0dp"
+                app:cardBackgroundColor="@android:color/transparent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/card_view_mobile_number">
+
+-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginEnd="@dimen/patient_details_screen_margin_start_end"
+                    android:layout_marginStart="@dimen/patient_details_screen_margin_start_end"
+                    android:background="@drawable/bottom_border"
+                    android:layout_marginTop="@dimen/home_screen_padding"
+                    android:weightSum="2">
+
+                <ImageView
+                    android:layout_width="0sp"
+                    android:layout_weight="0.1"
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="@dimen/home_screen_padding"
+                    android:src="@mipmap/patient_icon"/>
+
+
+                <ImageView
+                    android:layout_width="0sp"
+                    android:layout_weight="0.1"
+                    android:layout_gravity="center"
+                    android:layout_height="30sp"
+                    android:src="@mipmap/divider_line"/>
+
+
+                <EditText
+                    android:id="@+id/tv_continuetv_patient_name"
+                    android:layout_width="0sp"
+                    android:layout_weight="1.8"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/home_screen_padding"
+                    android:hint="Name"
+                    android:background="@android:color/transparent"
+                    android:textColorHint="@color/edittextcolor"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/home_screen_button_size" />
+
+                </LinearLayout>
+        <!--    </android.support.v7.widget.CardView>-->
+
+
+
+         <!--   <android.support.v7.widget.CardView
+                android:id="@+id/card_view_patient_mobile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/home1_screen_margin_start_end"
+                android:layout_marginStart="@dimen/home1_screen_margin_start_end"
+                android:layout_marginTop="@dimen/home_screen_padding"
+                app:cardCornerRadius="@dimen/cardCornerRadius"
+                app:cardElevation="@dimen/cardElevation"
+
+                app:cardPreventCornerOverlap="false"
+                app:contentPadding="0dp"
+                app:cardBackgroundColor="@android:color/transparent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/card_view_mobile_number">
+-->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginEnd="@dimen/patient_details_screen_margin_start_end"
+                    android:layout_marginStart="@dimen/patient_details_screen_margin_start_end"
+                    android:background="@drawable/bottom_border"
+                    android:layout_marginTop="@dimen/home_screen_padding"
+                    android:weightSum="2">
+
+                    <ImageView
+                        android:layout_width="0sp"
+                        android:layout_weight="0.1"
+                        android:layout_gravity="center"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="@dimen/home_screen_padding"
+                        android:src="@mipmap/mobile_icon_details"/>
+
+
+                    <ImageView
+                        android:layout_width="0sp"
+                        android:layout_weight="0.1"
+                        android:layout_gravity="center"
+                        android:layout_height="30sp"
+                        android:src="@mipmap/divider_line"/>
+
+
+                    <EditText
+                        android:id="@+id/tv_continuetv_patient_mobile"
+                        android:layout_width="0sp"
+                        android:layout_weight="1.8"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:padding="@dimen/home_screen_padding"
+                        android:hint="Mobile"
+                        android:background="@android:color/transparent"
+                        android:textColorHint="@color/edittextcolor"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/home_screen_button_size" />
+
+                </LinearLayout>
+            <!--</android.support.v7.widget.CardView>-->
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginEnd="@dimen/patient_details_screen_margin_start_end"
+                android:layout_marginStart="@dimen/patient_details_screen_margin_start_end"
+                android:background="@drawable/bottom_border"
+                android:layout_marginTop="@dimen/home_screen_padding"
+                android:weightSum="2">
+
+                <ImageView
+                    android:layout_width="0sp"
+                    android:layout_weight="0.1"
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="@dimen/home_screen_padding"
+                    android:src="@mipmap/mail_icon"/>
+
+
+                <ImageView
+                    android:layout_width="0sp"
+                    android:layout_weight="0.1"
+                    android:layout_gravity="center"
+                    android:layout_height="30sp"
+                    android:src="@mipmap/divider_line"/>
+
+
+                <EditText
+                    android:id="@+id/tv_continuetv_patient_email"
+                    android:layout_width="0sp"
+                    android:layout_weight="1.8"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/home_screen_padding"
+                    android:hint="Email"
+                    android:background="@android:color/transparent"
+                    android:textColorHint="@color/edittextcolor"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/home_screen_button_size" />
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginEnd="@dimen/patient_details_screen_margin_start_end"
+                android:layout_marginStart="@dimen/patient_details_screen_margin_start_end"
+                android:background="@drawable/bottom_border"
+                android:layout_marginTop="@dimen/home_screen_padding"
+                android:weightSum="2">
+
+                <ImageView
+                    android:layout_width="0sp"
+                    android:layout_weight="0.1"
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="@dimen/home_screen_padding"
+                    android:src="@mipmap/adharcard_icon"/>
+
+
+                <ImageView
+                    android:layout_width="0sp"
+                    android:layout_weight="0.1"
+                    android:layout_gravity="center"
+                    android:layout_height="30sp"
+                    android:src="@mipmap/divider_line"/>
+
+
+                <EditText
+                    android:id="@+id/tv_continuetv_patient_addhar_number"
+                    android:layout_width="0sp"
+                    android:layout_weight="1.8"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/home_screen_padding"
+                    android:hint="Aadhar Number"
+                    android:background="@android:color/transparent"
+                    android:textColorHint="@color/edittextcolor"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/home_screen_button_size" />
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginEnd="@dimen/patient_details_screen_margin_start_end"
+                android:layout_marginStart="@dimen/patient_details_screen_margin_start_end"
+                android:background="@drawable/bottom_border"
+                android:layout_marginTop="@dimen/home_screen_padding"
+                android:weightSum="2">
+
+                <ImageView
+                    android:layout_width="0sp"
+                    android:layout_weight="0.1"
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="@dimen/home_screen_padding"
+                    android:src="@mipmap/address_icon"/>
+
+
+                <ImageView
+                    android:layout_width="0sp"
+                    android:layout_weight="0.1"
+                    android:layout_gravity="center"
+                    android:layout_height="30sp"
+                    android:src="@mipmap/divider_line"/>
+
+
+                <EditText
+                    android:id="@+id/tv_continuetv_patient_adress"
+                    android:layout_width="0sp"
+                    android:layout_weight="1.8"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/home_screen_padding"
+                    android:hint="Address"
+                    android:background="@android:color/transparent"
+                    android:textColorHint="@color/edittextcolor"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/home_screen_button_size" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginEnd="@dimen/patient_details_screen_margin_start_end"
+                android:layout_marginStart="@dimen/patient_details_screen_margin_start_end"
+                android:background="@drawable/bottom_border"
+                android:layout_marginTop="@dimen/home_screen_padding"
+                android:weightSum="2">
+
+                <ImageView
+                    android:layout_width="0sp"
+                    android:layout_weight="0.1"
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="@dimen/home_screen_padding"
+                    android:src="@mipmap/pin_code_icon"/>
+
+
+                <ImageView
+                    android:layout_width="0sp"
+                    android:layout_weight="0.1"
+                    android:layout_gravity="center"
+                    android:layout_height="30sp"
+                    android:src="@mipmap/divider_line"/>
+
+
+                <EditText
+                    android:id="@+id/tv_continuetv_patient_pin_code"
+                    android:layout_width="0sp"
+                    android:layout_weight="1.8"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/home_screen_padding"
+                    android:hint="Pincode"
+                    android:background="@android:color/transparent"
+                    android:textColorHint="@color/edittextcolor"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/home_screen_button_size" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginEnd="@dimen/patient_details_screen_margin_start_end"
+                android:layout_marginStart="@dimen/patient_details_screen_margin_start_end"
+                android:background="@drawable/bottom_border"
+                android:layout_marginTop="@dimen/home_screen_padding"
+                android:weightSum="2">
+
+                <ImageView
+                    android:layout_width="0sp"
+                    android:layout_weight="0.1"
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="@dimen/home_screen_padding"
+                    android:src="@mipmap/weight_icon"/>
+
+
+                <ImageView
+                    android:layout_width="0sp"
+                    android:layout_weight="0.1"
+                    android:layout_gravity="center"
+                    android:layout_height="30sp"
+                    android:src="@mipmap/divider_line"/>
+
+
+                <EditText
+                    android:id="@+id/tv_continuetv_patient_weight"
+                    android:layout_width="0sp"
+                    android:layout_weight="1.8"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/home_screen_padding"
+                    android:hint="Weight"
+                    android:background="@android:color/transparent"
+                    android:textColorHint="@color/edittextcolor"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/home_screen_button_size" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginEnd="@dimen/patient_details_screen_margin_start_end"
+                android:layout_marginStart="@dimen/patient_details_screen_margin_start_end"
+                android:background="@drawable/bottom_border"
+                android:layout_marginTop="@dimen/home_screen_padding"
+                android:weightSum="2">
+
+                <ImageView
+                    android:layout_width="0sp"
+                    android:layout_weight="0.1"
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="@dimen/home_screen_padding"
+                    android:src="@mipmap/age_icon"/>
+
+
+                <ImageView
+                    android:layout_width="0sp"
+                    android:layout_weight="0.1"
+                    android:layout_gravity="center"
+                    android:layout_height="30sp"
+                    android:src="@mipmap/divider_line"/>
+
+
+                <EditText
+                    android:id="@+id/tv_continuetv_patient_age"
+                    android:layout_width="0sp"
+                    android:layout_weight="1.8"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/home_screen_padding"
+                    android:hint="Age"
+                    android:background="@android:color/transparent"
+                    android:textColorHint="@color/edittextcolor"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/home_screen_button_size" />
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginEnd="@dimen/patient_details_screen_margin_start_end"
+                android:layout_marginStart="@dimen/patient_details_screen_margin_start_end"
+                android:background="@drawable/bottom_border"
+                android:layout_marginTop="@dimen/home_screen_padding"
+                android:weightSum="2">
+
+                <ImageView
+                    android:layout_width="0sp"
+                    android:layout_weight="0.1"
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="@dimen/home_screen_padding"
+                    android:src="@mipmap/gender_icon"/>
+
+
+                <ImageView
+                    android:layout_width="0sp"
+                    android:layout_weight="0.1"
+                    android:layout_gravity="center"
+                    android:layout_height="30sp"
+                    android:src="@mipmap/divider_line"/>
+
+
+                <EditText
+                    android:id="@+id/tv_continuetv_patient_gender"
+                    android:layout_width="0sp"
+                    android:layout_weight="1.8"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/home_screen_padding"
+                    android:hint="Gender"
+                    android:background="@android:color/transparent"
+                    android:textColorHint="@color/edittextcolor"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/home_screen_button_size" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginEnd="@dimen/patient_details_screen_margin_start_end"
+                android:layout_marginStart="@dimen/patient_details_screen_margin_start_end"
+                android:background="@drawable/bottom_border"
+                android:layout_marginTop="@dimen/home_screen_padding"
+                android:weightSum="2">
+
+                <ImageView
+                    android:layout_width="0sp"
+                    android:layout_weight="0.1"
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="@dimen/home_screen_padding"
+                    android:src="@mipmap/temprature_icon"/>
+
+
+                <ImageView
+                    android:layout_width="0sp"
+                    android:layout_weight="0.1"
+                    android:layout_gravity="center"
+                    android:layout_height="30sp"
+                    android:src="@mipmap/divider_line"/>
+
+
+                <EditText
+                    android:id="@+id/tv_continuetv_patient_temprature"
+                    android:layout_width="0sp"
+                    android:layout_weight="1.8"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/home_screen_padding"
+                    android:hint="Temperature"
+                    android:background="@android:color/transparent"
+                    android:textColorHint="@color/edittextcolor"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/home_screen_button_size" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginEnd="@dimen/patient_details_screen_margin_start_end"
+                android:layout_marginStart="@dimen/patient_details_screen_margin_start_end"
+                android:background="@drawable/bottom_border"
+                android:layout_marginTop="@dimen/home_screen_padding"
+                android:weightSum="2">
+
+                <ImageView
+                    android:layout_width="0sp"
+                    android:layout_weight="0.1"
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="@dimen/home_screen_padding"
+                    android:src="@mipmap/bp_icon"/>
+
+
+                <ImageView
+                    android:layout_width="0sp"
+                    android:layout_weight="0.1"
+                    android:layout_gravity="center"
+                    android:layout_height="30sp"
+                    android:src="@mipmap/vertical_line_security"/>
+
+
+                <EditText
+                    android:id="@+id/tv_continuetv_patient_blood_pressure"
+                    android:layout_width="0sp"
+                    android:layout_weight="1.8"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/home_screen_padding"
+                    android:hint="Blood Pressure"
+                    android:background="@android:color/transparent"
+                    android:textColorHint="@color/edittextcolor"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/home_screen_button_size" />
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginEnd="@dimen/patient_details_screen_margin_start_end"
+                android:layout_marginStart="@dimen/patient_details_screen_margin_start_end"
+                android:background="@drawable/bottom_border"
+                android:layout_marginTop="@dimen/home_screen_padding"
+                android:weightSum="2">
+
+                <ImageView
+                    android:layout_width="0sp"
+                    android:layout_weight="0.1"
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="@dimen/home_screen_padding"
+                    android:src="@mipmap/disease_icon"/>
+
+
+                <ImageView
+                    android:layout_width="0sp"
+                    android:layout_weight="0.1"
+                    android:layout_gravity="center"
+                    android:layout_height="30sp"
+                    android:src="@mipmap/divider_line"/>
+
+
+                <EditText
+                    android:id="@+id/tv_continuetv_patient_symptoms"
+                    android:layout_width="0sp"
+                    android:layout_weight="1.8"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/home_screen_padding"
+                    android:hint="Symptoms"
+                    android:background="@android:color/transparent"
+                    android:textColorHint="@color/edittextcolor"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/home_screen_button_size" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginEnd="@dimen/patient_details_screen_margin_start_end"
+                android:layout_marginStart="@dimen/patient_details_screen_margin_start_end"
+                android:background="@drawable/bottom_border"
+                android:layout_marginTop="@dimen/home_screen_padding"
+                android:weightSum="2">
+
+                <ImageView
+                    android:layout_width="0sp"
+                    android:layout_weight="0.1"
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="@dimen/home_screen_padding"
+                    android:src="@mipmap/consultant_icon"/>
+
+
+                <ImageView
+                    android:layout_width="0sp"
+                    android:layout_weight="0.1"
+                    android:layout_gravity="center"
+                    android:layout_height="30sp"
+                    android:src="@mipmap/divider_line"/>
+
+
+                <EditText
+                    android:id="@+id/tv_continuetv_patient_consultant"
+                    android:layout_width="0sp"
+                    android:layout_weight="1.8"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/home_screen_padding"
+                    android:hint="Consultant"
+                    android:background="@android:color/transparent"
+                    android:textColorHint="@color/edittextcolor"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/home_screen_button_size" />
+
+            </LinearLayout>
+
+
+
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_view_continue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/home_screen_margin_top_bottom"
+                android:layout_marginEnd="@dimen/button_screen_margin_start_end"
+                android:layout_marginStart="@dimen/button_screen_margin_start_end"
+                android:layout_marginTop="@dimen/home_screen_padding"
+                app:cardCornerRadius="@dimen/cardCornerRadius"
+                app:cardElevation="@dimen/cardElevation"
+                app:cardPreventCornerOverlap="false"
+                app:contentPadding="0dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/card_view_mobile_number">
+
+
+                <TextView
+                    android:id="@+id/tv_continue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/button_color"
+                    android:gravity="center"
+                    android:padding="@dimen/home_screen_padding"
+                    android:text="SUBMIT"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/home_screen_button_size" />
+
+
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
+</android.support.constraint.ConstraintLayout>

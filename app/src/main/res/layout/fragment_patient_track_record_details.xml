@@ -1,0 +1,632 @@
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_above="?actionBarSize"
+    android:background="#054c6a">
+
+
+
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toTopOf="?actionBarSize">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="?actionBarSize">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimaryDark"
+            android:theme="@style/ToolbarStyle"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_scrollFlags="scroll|enterAlways">
+
+        <TextView
+            android:id="@+id/toolbar_name"
+            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/security_code_screen_margin_start_end"
+            android:gravity="center"
+            android:text="Patient Record List"
+            android:textColor="@android:color/white" />
+        </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:orientation="horizontal"
+        android:id="@+id/linear_layout_patient_details_on_date"
+        android:weightSum="2"
+        android:baselineAligned="false"
+        android:layout_marginEnd="@dimen/patient_details_screen_margin_start_end"
+        android:layout_marginStart="@dimen/patient_details_screen_margin_start_end"
+        android:background="@drawable/bottom_border"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+
+    <LinearLayout
+        android:layout_width="0sp"
+        android:layout_weight="0.35"
+        android:layout_height="?actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/tv_patient_name"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:padding="@dimen/home_screen_padding"
+            android:gravity="center_vertical"
+            android:text="Patient Details on"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/event_title_text_size" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="0sp"
+        android:layout_weight="1.65"
+        android:layout_height="?actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+        <TextView
+            android:id="@+id/tv_detail1"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:gravity="center_vertical"
+            android:text="date"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/event_title_text_size" />
+    </LinearLayout>
+    </LinearLayout>
+
+
+
+
+   <!-- <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:orientation="horizontal"
+        android:id="@+id/linear_layout_patient_aadhar_name_id_age_gender_weight_bp_temp_symptoms_cosultant"
+        android:baselineAligned="false"
+        android:layout_marginEnd="@dimen/patient_details_screen_margin_start_end"
+        android:layout_marginStart="@dimen/patient_details_screen_margin_start_end"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linear_layout_patient_details_on_date">
+
+-->
+        <TableLayout
+            android:layout_width="match_parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="@dimen/home_screen_padding"
+            android:id="@+id/table_aadhar_age_gender_patient"
+            android:layout_marginEnd="@dimen/patient_details_screen_margin_start_end"
+            android:layout_marginStart="@dimen/patient_details_screen_margin_start_end"
+            app:layout_constraintTop_toBottomOf="@+id/linear_layout_patient_details_on_date"
+            android:layout_height="wrap_content">
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:weightSum="6"
+                android:layout_height="?actionBarSize">
+
+                <TextView
+                    android:text="Aadhar Number  :"
+                    android:padding="@dimen/home_screen_padding"
+                    android:textColor="@android:color/white"
+                    android:layout_width="0sp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:textSize="@dimen/event_title_text_size"
+                    android:layout_column="1" />
+
+                <EditText
+                    android:layout_width="0sp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/home_screen_padding"
+                    android:text=""
+                    android:inputType="text"
+                    android:background="@drawable/radius_in_edittext"
+                    android:id="@+id/table_aadhar_number"
+                    android:textColor="@android:color/white"
+                    android:layout_column="2" />
+
+                <TextView
+                    android:text="Patient ID  :"
+                    android:layout_width="0sp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10sp"
+                    android:textColor="@android:color/white"
+                    android:layout_column="3" />
+
+                <EditText
+                    android:layout_width="0sp"
+                    android:layout_weight="1"
+                    android:layout_column="4"
+                    android:background="@drawable/radius_in_edittext"
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/home_screen_padding"
+                    android:text=""
+                    android:inputType="text"
+                    android:id="@+id/table_patient_id"
+                    android:textColor="@android:color/white"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:text="Age/Gender  :"
+                    android:layout_width="0sp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:layout_marginStart="10sp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/white"
+                    android:layout_column="5" />
+
+                <EditText
+                    android:layout_width="0sp"
+                    android:layout_weight="1"
+                    android:padding="@dimen/home_screen_padding"
+                    android:layout_column="6"
+                    android:background="@drawable/radius_in_edittext"
+                    android:gravity="center_vertical"
+                    android:inputType="text"
+                    android:id="@+id/table_age_gender"
+                    android:textColor="@android:color/white"
+                    android:layout_height="wrap_content" />
+
+            </TableRow>
+
+        </TableLayout>
+
+
+
+
+
+    <TableLayout
+        android:layout_width="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="@dimen/home_screen_padding"
+        android:id="@+id/table_blood_temperature"
+        android:layout_marginEnd="@dimen/patient_details_screen_margin_start_end"
+        android:layout_marginStart="@dimen/patient_details_screen_margin_start_end"
+        app:layout_constraintTop_toBottomOf="@+id/table_aadhar_age_gender_patient"
+        android:layout_height="wrap_content">
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:weightSum="6"
+            android:layout_height="?actionBarSize">
+
+            <TextView
+                android:text="Patient Weights  :"
+                android:padding="@dimen/home_screen_padding"
+                android:textColor="@android:color/white"
+                android:layout_width="0sp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:textSize="@dimen/event_title_text_size"
+                android:layout_column="1" />
+
+            <EditText
+                android:layout_width="0sp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/home_screen_padding"
+                android:text=""
+                android:inputType="text"
+                android:background="@drawable/radius_in_edittext"
+                android:id="@+id/table_patient_weights"
+                android:textColor="@android:color/white"
+                android:layout_column="2" />
+
+            <TextView
+                android:text="Blood Pressure  :"
+                android:layout_width="0sp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:layout_marginStart="10sp"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:layout_column="3" />
+
+            <EditText
+                android:layout_width="0sp"
+                android:layout_weight="1"
+                android:padding="@dimen/home_screen_padding"
+                android:layout_column="4"
+                android:background="@drawable/radius_in_edittext"
+                android:gravity="center_vertical"
+                android:inputType="text"
+                android:id="@+id/table_patient_blood_pressure"
+                android:textColor="@android:color/white"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:text="Temperature  :"
+                android:layout_width="0sp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10sp"
+                android:textColor="@android:color/white"
+                android:layout_column="5" />
+
+            <EditText
+                android:layout_width="0sp"
+                android:layout_weight="1"
+                android:layout_column="6"
+                android:gravity="center_vertical"
+                android:inputType="text"
+                android:padding="@dimen/home_screen_padding"
+                android:background="@drawable/radius_in_edittext"
+                android:id="@+id/table_temperature"
+                android:textColor="@android:color/white"
+                android:layout_height="wrap_content" />
+
+        </TableRow>
+
+    </TableLayout>
+
+
+
+
+    <TableLayout
+        android:layout_width="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="@dimen/home_screen_padding"
+        android:id="@+id/table_symptoms_cosultant"
+        android:layout_marginEnd="@dimen/patient_details_screen_margin_start_end"
+        android:layout_marginStart="@dimen/patient_details_screen_margin_start_end"
+        app:layout_constraintTop_toBottomOf="@+id/table_blood_temperature"
+        android:layout_height="wrap_content">
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:weightSum="6"
+            android:layout_gravity="start"
+            android:gravity="start"
+            android:layout_height="?actionBarSize">
+
+            <TextView
+                android:text="Symptoms  :"
+                android:padding="@dimen/home_screen_padding"
+                android:textColor="@android:color/white"
+                android:layout_width="0sp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:textSize="@dimen/event_title_text_size"
+                android:layout_column="1" />
+
+            <EditText
+                android:layout_width="0sp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/home_screen_padding"
+                android:text=""
+                android:inputType="text"
+                android:background="@drawable/radius_in_edittext"
+                android:id="@+id/table_patient_symptoms"
+                android:textColor="@android:color/white"
+                android:layout_column="2" />
+
+            <TextView
+                android:text="Consultant  :"
+                android:layout_width="0sp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10sp"
+                android:textColor="@android:color/white"
+                android:layout_column="3" />
+
+            <EditText
+                android:layout_width="0sp"
+                android:layout_weight="1"
+                android:layout_column="4"
+                android:padding="@dimen/home_screen_padding"
+                android:gravity="center_vertical"
+                android:inputType="text"
+                android:background="@drawable/radius_in_edittext"
+                android:id="@+id/table_patient_consultant"
+                android:textColor="@android:color/white"
+                android:layout_height="wrap_content" />
+
+
+
+        </TableRow>
+
+    </TableLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:orientation="horizontal"
+        android:id="@+id/linear_layout_doctor_advice"
+        android:weightSum="2"
+        android:baselineAligned="false"
+        android:layout_marginEnd="@dimen/patient_details_screen_margin_start_end"
+        android:layout_marginStart="@dimen/patient_details_screen_margin_start_end"
+        android:background="@drawable/bottom_border"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/table_symptoms_cosultant">
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                android:padding="@dimen/home_screen_padding"
+                android:gravity="center_vertical"
+                android:text="Doctor's Advice"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/event_title_text_size" />
+        </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:orientation="horizontal"
+        android:id="@+id/linear_layout_medicine_dose_time_number_of_days"
+        android:weightSum="4"
+        android:baselineAligned="false"
+        android:layout_marginTop="@dimen/home_screen_padding"
+        android:layout_marginEnd="@dimen/patient_details_screen_margin_start_end"
+        android:layout_marginStart="@dimen/patient_details_screen_margin_start_end"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="#367f9e"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linear_layout_doctor_advice">
+
+    <LinearLayout
+        android:layout_width="0sp"
+        android:layout_weight="1"
+        android:weightSum="2"
+        android:layout_height="?actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+        <ImageView
+            android:layout_width="0sp"
+            android:layout_height="?actionBarSize"
+            android:layout_weight="0.5"
+            android:src="@mipmap/medicine_icon"
+            />
+
+        <TextView
+            android:id="@+id/tv_patient_medicine"
+            android:layout_width="0sp"
+            android:layout_weight="1.5"
+            android:layout_height="?actionBarSize"
+            android:padding="@dimen/home_screen_padding"
+            android:gravity="center_vertical"
+            android:text="Medicine"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/event_title_text_size" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0sp"
+        android:layout_weight="1"
+        android:weightSum="2"
+        android:layout_height="?actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:layout_width="0sp"
+            android:layout_height="?actionBarSize"
+            android:layout_weight="0.5"
+            android:src="@mipmap/doses_icon"
+            />
+        <TextView
+            android:id="@+id/tv_patient_doses"
+            android:layout_width="0sp"
+            android:layout_weight="1.5"
+            android:layout_height="?actionBarSize"
+            android:padding="@dimen/home_screen_padding"
+            android:gravity="center_vertical"
+            android:text="Doses"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/event_title_text_size" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="0sp"
+        android:layout_weight="1"
+        android:layout_height="?actionBarSize"
+        android:weightSum="2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+        <ImageView
+            android:layout_width="0sp"
+            android:layout_height="?actionBarSize"
+            android:layout_weight="0.5"
+            android:src="@mipmap/time_icon"
+            />
+
+        <TextView
+            android:id="@+id/tv_patient_medicine_time"
+            android:layout_width="0sp"
+            android:layout_weight="1.5"
+            android:layout_height="?actionBarSize"
+            android:padding="@dimen/home_screen_padding"
+            android:gravity="center_vertical"
+            android:text="Medicine Time"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/event_title_text_size" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0sp"
+        android:layout_weight="1"
+        android:weightSum="2"
+        android:layout_height="?actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:layout_width="0sp"
+            android:layout_height="?actionBarSize"
+            android:layout_weight="0.5"
+            android:src="@mipmap/days_icon"
+            />
+
+
+        <TextView
+            android:id="@+id/tv_patient_number_of_days"
+            android:layout_width="0sp"
+            android:layout_weight="1.5"
+            android:layout_height="?actionBarSize"
+            android:padding="@dimen/home_screen_padding"
+            android:gravity="center_vertical"
+            android:text="Number Of Days"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/event_title_text_size" />
+    </LinearLayout>
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:id="@+id/recyler_view_list"
+        app:layout_constraintTop_toBottomOf="@+id/linear_layout_medicine_dose_time_number_of_days"
+        android:layout_marginEnd="@dimen/patient_details_screen_margin_start_end"
+        android:layout_marginStart="@dimen/patient_details_screen_margin_start_end"
+        android:layout_marginTop="@dimen/home_screen_padding"
+        android:layout_height="200sp"></android.support.v7.widget.RecyclerView>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/linear_layout_observation_test_recommanded"
+        android:weightSum="2"
+        android:baselineAligned="false"
+        android:layout_marginTop="@dimen/home_screen_padding"
+        android:layout_marginEnd="@dimen/patient_details_screen_margin_start_end"
+        android:layout_marginStart="@dimen/patient_details_screen_margin_start_end"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recyler_view_list">
+
+
+        <LinearLayout
+            android:layout_width="0sp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Observation"
+                android:padding="@dimen/home_screen_padding"
+                android:textColor="@android:color/white"
+                />
+
+
+            <TextView
+                android:id="@+id/tv_patient_observation"
+                android:layout_width="match_parent"
+                android:layout_height="150sp"
+                android:padding="@dimen/home_screen_padding"
+                android:gravity="top"
+                android:background="@drawable/radius_in_edittext"
+                android:text="Number Of DaysNumber Of DaysNumber Of DaysNumber Of DaysNumber Of DaysNumber Of DaysNumber Of DaysNumber Of DaysNumber Of DaysNumber Of DaysNumber Of Days"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/event_title_text_size" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0sp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/home_screen_padding"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Test Recommended"
+                android:padding="@dimen/home_screen_padding"
+                android:textColor="@android:color/white"
+                />
+
+
+            <TextView
+                android:id="@+id/tv_patient_test"
+                android:layout_width="match_parent"
+                android:layout_height="150sp"
+                android:padding="@dimen/home_screen_padding"
+                android:gravity="top"
+                android:background="@drawable/radius_in_edittext"
+                android:text="Number Of DaysNumber Of DaysNumber Of DaysNumber Of DaysNumber Of DaysNumber Of DaysNumber Of DaysNumber Of DaysNumber Of DaysNumber Of DaysNumber Of Days"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/event_title_text_size" />
+        </LinearLayout>
+    </LinearLayout>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_view_continue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/home_screen_margin_top_bottom"
+            android:layout_marginEnd="@dimen/button_screen_margin_start_end"
+            android:layout_marginStart="@dimen/button_screen_margin_start_end"
+            android:layout_marginTop="@dimen/home_screen_padding"
+            app:cardCornerRadius="@dimen/cardCornerRadius"
+            app:cardElevation="@dimen/cardElevation"
+            app:cardPreventCornerOverlap="false"
+            app:contentPadding="0dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linear_layout_observation_test_recommanded">
+            <TextView
+                android:id="@+id/tv_continue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/button_color"
+                android:gravity="center"
+                android:padding="@dimen/home_screen_padding"
+                android:text="Mail Or Print"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/home_screen_button_size" />
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>
